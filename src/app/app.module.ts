@@ -8,6 +8,8 @@ import { ContactCreateComponent } from './contact-create/contact-create.componen
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AskComponent } from './ask/ask.component';
+import { AnswerComponent } from './answer/answer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FooterComponent } from './footer/footer.component';
     ContactCreateComponent,
     ContactListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AskComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,
