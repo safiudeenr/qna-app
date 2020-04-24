@@ -1,8 +1,14 @@
 <main role="main" class="flex-shrink-0" style="padding:100px ;">
     <div class="container" >
-      <div class="row bg-light">
-        <div class="col-sm-12" routerLink="/ask">
-          Your Question
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="input-group mb-3" [formGroup]="searchForm">
+            <input formControlName="searchBox" type="text" class="form-control" placeholder="Your question">
+            <div class="input-group-append">
+              <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="performSearch()">Search</span>
+              <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="addQuestion()">Add Question</span>
+            </div>
+          </div>
           <hr />
         </div>
         
