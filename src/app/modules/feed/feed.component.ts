@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Answer } from '../../class/answer';
+import { Question } from '../../class/question';
+import { AskService } from '../../services/ask.service';
 
 @Component({
   selector: 'app-feed',
@@ -20,9 +23,13 @@ export class FeedComponent implements OnInit {
   }
 ];
 
-  constructor() { }
+  constructor(private askService: AskService) { }
+
+  questions: Question[];
 
   ngOnInit(): void {
+    this.askService.getQuestions()
+        .subscribe((data: Answer) => this.questions = { ...data });
   }
 
 }
