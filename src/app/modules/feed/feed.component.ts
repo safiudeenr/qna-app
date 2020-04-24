@@ -58,7 +58,7 @@ export class FeedComponent implements OnInit {
     {
       question: 'ques2111',
       answer: 'answer2',
-      community: '123',
+      community: '123',     
       id: 2
     }
     ];
@@ -70,7 +70,7 @@ export class FeedComponent implements OnInit {
       return;
     }
 
-    
+
 
 
   }
