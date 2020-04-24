@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Answer } from '../../class/answer';
+import { Question } from '../../class/question';
+import { AskService } from '../../services/ask.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -25,7 +28,9 @@ export class FeedComponent implements OnInit {
   }
   ];
 
-  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) { }
+  questionlist: Question[];
+
+  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private askService: AskService) { }
 
   ngOnInit(): void {
     //console.log(Number(this.route.snapshot.paramMap.get('id')));
@@ -34,6 +39,9 @@ export class FeedComponent implements OnInit {
       searchBox: ['']
     });
 
+    console.log(Number(this.route.snapshot.paramMap.get('id')));
+    this.askService.getQuestions()
+        .subscribe((data: Question[]) => this.questionlist = { ...data });
   }
 
   get f() { return this.searchForm.controls; }
