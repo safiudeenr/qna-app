@@ -10,7 +10,7 @@ import { HeaderComponent } from './modules/header/header.component';
 import { FooterComponent } from './modules/footer/footer.component';
 import { LogonComponent } from './modules/logon/logon.component';
 import { AskComponent } from './modules/ask/ask.component';
-import { QuestionComponent } from './question/question.component';
+import { QuestionComponent } from './modules/question/question.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
