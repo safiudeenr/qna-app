@@ -1,10 +1,20 @@
 <main role="main" class="flex-shrink-0" style="padding:100px ;">
     <div class="container" >
-        <div class="row p-l" name="feed" *ngFor="let feed of feeds"> 
-            <div class="column">
+      <div class="row bg-light">
+        <div class="col-sm-12" routerLink="/ask">
+          Your Question
+          <hr />
+        </div>
+        
+      </div>
+      <div class="row" name="feed" *ngFor="let feed of feeds"> 
+            <div class="col-sm-12">
       <a href="#"><strong>{{feed.community}}</strong></a>
       <a href="#" routerLink="/feed/{{feed.id}}"><h3>{{feed.question}}</h3></a>
       <p>{{feed.answer}}</p>
+      <p class="text-right">
+        <button class="btn-primary btn-sm">Likes</button>
+      </p>
       <hr />
       </div>
     </div>

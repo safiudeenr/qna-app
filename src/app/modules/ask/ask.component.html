@@ -20,7 +20,7 @@
         <!--        {{question.untouched}}-->
         <div class="form-group">
             <label>What is your question topic?</label>
-            <select class="custom-select" name="topic" [(ngModel)]="questionModel.topic">
+            <select class="custom-select" name="topic" [(ngModel)]="questionModel.topic" multiple>
                 <option *ngFor="let topic of topics">{{topic}}</option>
             </select>
         </div>

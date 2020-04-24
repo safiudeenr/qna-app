@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Answer } from '../../class/answer';
 import { Question } from '../../class/question';
 import { AskService } from '../../services/ask.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -23,13 +24,20 @@ export class FeedComponent implements OnInit {
   }
 ];
 
-  constructor(private askService: AskService) { }
+  constructor(private askService: AskService, private route: ActivatedRoute) { }
 
-  questions: Question[];
+  questionlist: Question[];
+
 
   ngOnInit(): void {
+    console.log(Number(this.route.snapshot.paramMap.get('id')));
     this.askService.getQuestions()
-        .subscribe((data: Answer) => this.questions = { ...data });
+        .subscribe((data: Question[]) => this.questionlist = { ...data });
   }
+
+  getTopPosts() {
+    // call service to get all the top posts
+  }
+
 
 }
