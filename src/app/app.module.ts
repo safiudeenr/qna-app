@@ -9,7 +9,9 @@ import { HomeComponent } from './modules/home/home.component';
 import { HeaderComponent } from './modules/header/header.component';
 import { FooterComponent } from './modules/footer/footer.component';
 import { LogonComponent } from './modules/logon/logon.component';
-
+import { AskComponent } from './modules/ask/ask.component';
+import { QuestionComponent } from './question/question.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,16 @@ import { LogonComponent } from './modules/logon/logon.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    LogonComponent
+    LogonComponent,
+    AskComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
