@@ -1,1 +1,30 @@
-<p>ask works!</p>
+<div class="container-fluid mb-5">
+    <h1>Ask a question</h1>
+    <hr />
+    <!--    {{ userForm.value | json}}-->
+<!--    {{ questionModel | json }}-->
+    <form #userForm="ngForm">
+        <div class="form-group">
+            <label>What is your question?</label>
+            <input type="text"
+                   required
+                   #question="ngModel"
+                   [class.is-invalid]="question.invalid && question.touched"
+                   class="form-control"
+                   name="question"
+                   [ngModel]="questionModel.question">
+            <small class="text-danger" [class.d-none]="question.valid || question.untouched">Question is required</small>
+        </div>
+<!--        {{ question.className }}-->
+<!--        only for #question-->
+<!--        {{question.untouched}}-->
+        <div class="form-group">
+            <label>What is your question topic?</label>
+            <select class="custom-select" name="topic" [ngModel]="questionModel.topic">
+                <option *ngFor="let topic of topics">{{topic}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Question</button>
+    </form>
+</div>
+<!--<div ngModelGroup>-->

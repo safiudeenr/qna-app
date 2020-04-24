@@ -9,7 +9,8 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AskComponent } from './ask/ask.component';
-import { AnswerComponent } from './answer/answer.component';
+import { QuestionComponent } from './question/question.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,12 @@ import { AnswerComponent } from './answer/answer.component';
     HeaderComponent,
     FooterComponent,
     AskComponent,
-    AnswerComponent
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
