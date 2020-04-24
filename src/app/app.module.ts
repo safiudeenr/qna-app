@@ -13,6 +13,10 @@ import { AskComponent } from './modules/ask/ask.component';
 import { QuestionComponent } from './modules/question/question.component';
 import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './modules/feed/feed.component';
+import { PostComponent } from './modules/post/post.component';
+import { CommunityComponent } from './modules/community/community.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -23,14 +27,17 @@ import { FeedComponent } from './modules/feed/feed.component';
     LogonComponent,
     AskComponent,
     QuestionComponent,
-    FeedComponent
+    FeedComponent,
+    PostComponent,
+    CommunityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

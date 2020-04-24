@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -20,9 +21,15 @@ export class FeedComponent implements OnInit {
   }
 ];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(Number(this.route.snapshot.paramMap.get('id')));
   }
+
+  getTopPosts() {
+    // call service to get all the top posts
+  }
+
 
 }
