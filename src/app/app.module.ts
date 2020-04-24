@@ -12,6 +12,7 @@ import { LogonComponent } from './modules/logon/logon.component';
 import { AskComponent } from './modules/ask/ask.component';
 import { QuestionComponent } from './modules/question/question.component';
 import { FormsModule } from '@angular/forms';
+import { FeedComponent } from './modules/feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     LogonComponent,
     AskComponent,
-    QuestionComponent
+    QuestionComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
