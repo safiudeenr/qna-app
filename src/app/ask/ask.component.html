@@ -3,7 +3,7 @@
     <hr />
     <!--    {{ userForm.value | json}}-->
 <!--    {{ questionModel | json }}-->
-    <form #userForm="ngForm">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
             <label>What is your question?</label>
             <input type="text"
