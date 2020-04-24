@@ -1,14 +1,11 @@
 <main role="main" class="flex-shrink-0" style="padding:100px ;">
     <div class="container" >
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Your question" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <span class="input-group-text" id="basic-addon2">search</span>
-            </div>
-          </div>
+      <div class="row bg-light">
+        <div class="col-sm-12" routerLink="/ask">
+          Your Question
+          <hr />
         </div>
+        
       </div>
       <div class="row" name="feed" *ngFor="let feed of feeds"> 
             <div class="col-sm-12">
