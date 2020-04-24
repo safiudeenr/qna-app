@@ -1,26 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ContactCreateComponent } from './contact-create/contact-create.component';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './modules/home/home.component';
+import { HeaderComponent } from './modules/header/header.component';
+import { FooterComponent } from './modules/footer/footer.component';
+import { LogonComponent } from './modules/logon/logon.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactCreateComponent,
-    ContactListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LogonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
