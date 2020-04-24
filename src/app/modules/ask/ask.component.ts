@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Question} from './question';
+import {Question} from '../../class/question';
 
 @Component({
   selector: 'app-ask',
