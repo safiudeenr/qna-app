@@ -16,12 +16,12 @@ export class AskComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.questionModel);
-    this.askService.submitQuestion(this.questionModel)
-        .subscribe(
-            data => console.log('Success!', data),
-            error => console.log('Error!', error)
-        );
+    // console.log(this.questionModel);
+    // // this.askService.submitQuestion(this.questionModel)
+    //     .subscribe(
+    //         data => console.log('Success!', data),
+    //         error => console.log('Error!', error)
+    //     );
   }
 
 }

@@ -1,28 +1,32 @@
 <main role="main" class="flex-shrink-0" style="padding:100px ;">
-    <div class="container" >
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="input-group mb-3" [formGroup]="searchForm">
-            <input formControlName="searchBox" type="text" class="form-control" placeholder="Your question">
-            <div class="input-group-append">
-              <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="performSearch()">Search</span>
-              <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="addQuestion()">Add Question</span>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group mb-3" [formGroup]="searchForm">
+          <input formControlName="searchBox" type="text" class="form-control" placeholder="Your question">
+          <div class="input-group-append">
+            <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="performSearch()">Search</span>
+            <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="addQuestion()">Add Question</span>
           </div>
-          <hr />
         </div>
-        
+        <hr />
       </div>
-      <div class="row" name="feed" *ngFor="let feed of feeds"> 
-            <div class="col-sm-12">
-      <a href="#"><strong>{{feed.community}}</strong></a>
-      <a href="#" routerLink="/feed/{{feed.id}}"><h3>{{feed.question}}</h3></a>
-      <p>{{feed.answer}}</p>
-      <p class="text-right">
-        <button class="btn-primary btn-sm">Likes</button>
-      </p>
-      <hr />
+
+    </div>
+    <div class="row" name="feed" *ngFor="let feed of topfeed">
+      <div class="col-sm-12">
+        <a href="#">
+          <strong>{{feed.communityId}}</strong>
+        </a>
+        <a href="#" routerLink="/feed/{{feed.id}}">
+          <h3>{{feed.subject}}</h3>
+        </a>
+        <p>{{feed.comments}}</p>
+        <p class="text-right">
+          <button class="btn-primary btn-sm">{{feed.votes}} Likes</button>
+        </p>
+        <hr />
       </div>
     </div>
-    </div>
-  </main>
+  </div>
+</main>

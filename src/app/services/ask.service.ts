@@ -7,21 +7,41 @@ import {Answer} from '../class/answer';
   providedIn: 'root'
 })
 export class AskService {
-
   url = '';
   constructor(private http: HttpClient) { }
-  submitQuestion(question: Question) {
-    this.url = 'post question';
-    return this.http.post<any>(this.url, question);
+
+
+  submitQuestion(subject, message, userId, comunityId) {
+    // console.log(userdIdd, ' USerId');
+    // const userId = userdIdd;
+    return this.http.post<any>('http://localhost:8080/v1/postQuestion', {subject, message, userId, comunityId})
+    .pipe(feed => {
+      console.log(JSON.stringify(feed));
+      return feed;
+    });
   }
 
-  submitAnswer(answer: Answer) {
-    this.url = 'post answer';
-    return this.http.post<any>(this.url, answer);
+  submitAnswer(message, postId, userId) {
+    return this.http.post<any>('http://localhost:8080/v1/postComment', {message, postId, userId})
+    .pipe(feed => {
+      console.log(JSON.stringify(feed));
+      return feed;
+    });
   }
 
   getQuestions(){
-    this.url = 'retrieve answers';
-    return this.http.get<any>(this.url);
+    return this.http.get<any>('http://localhost:8080/v1/getUnansweredQuestions')
+      .pipe(feed => {
+        console.log(JSON.stringify(feed));
+        return feed;
+      });
+  }
+
+  getFeed() {
+    return this.http.get<any>('http://localhost:8080/v1/getTopQuestions')
+      .pipe(feed => {
+        console.log(JSON.stringify(feed));
+        return feed;
+      });
   }
 }

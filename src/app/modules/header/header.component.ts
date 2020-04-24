@@ -8,8 +8,13 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   currentUser: any;
+  loggedUser: string;
   constructor(private authService: AuthService) {
-    // this.authService.currentUser.subscribe(u => this.currentUser = u.name);
+     this.authService.currentUser.subscribe(u => this.currentUser = u);
+     if(!this.currentUser) {
+       console.log(JSON.stringify(this.currentUser));
+       //this.loggedUser = this.currentUser.userName;
+     }
   }
 
   ngOnInit(): void {

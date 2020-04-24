@@ -1,1 +1,17 @@
-<p>question works!</p>
+<main role="main" class="flex-shrink-0" style="padding:100px ;">
+<div class="container" style="margin-top:2em;">
+    <div class="row" *ngFor="let feed of topQuestions">
+        <div class="col-sm-12">
+            <h4>{{feed.subject}}</h4>
+            <p>{{feed.message}}</p>
+            <div class="input-group" [formGroup]="questionForm">               
+                <textarea formControlName="answerBox" class="form-control" aria-label="With textarea"></textarea>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" (click)="addAnswer(feed.postId)">Answer</span>
+                  </div>
+              </div>
+        </div>
+        <hr />
+    </div>
+</div>
+</main>

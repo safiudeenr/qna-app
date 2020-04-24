@@ -8,11 +8,11 @@ import { FeedComponent } from './modules/feed/feed.component';
 import { PostComponent } from './modules/post/post.component';
 
 const routes: Routes = [
-  {path:  '', pathMatch:  'full', redirectTo:  'home'},
-  {path: 'home', component: HomeComponent},
+  {path:  '', pathMatch:  'full', redirectTo:  'feed'},
+  {path: 'home', component: FeedComponent},
   {path: 'logon', component: LogonComponent},
   {path: 'ask', component: AskComponent},
-  {path: 'question', component: QuestionComponent},
+  {path: 'answer', component: QuestionComponent},
   {path: 'feed', component: FeedComponent},
   { path: 'feed/:id', component: FeedComponent },
   { path: 'post', component: PostComponent },

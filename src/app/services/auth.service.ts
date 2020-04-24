@@ -21,13 +21,15 @@ export class AuthService {
    }
 
   login(username, password) {
-    const name = username;
-    const job = password;
+    //const username = username;
+    //const job = password;
     // return this.http.post('https://reqres.in/api/users', {
     // return this.http.post('https://reqres.in/api/login', {
-    return this.http.post<any>('https://reqres.in/api/users', {name, job})
+    //return this.http.post<any>('https://reqres.in/api/users', {name, job})
+    return this.http.post<any>('http://localhost:8080/v1/login', {username})
       .pipe(map(user => {
         localStorage.setItem('currentUser', JSON.stringify(user));
+        console.log(JSON.stringify(user));
         this.currentUserSubject.next(user);
         return user;
       }));
