@@ -6,7 +6,7 @@
           <input formControlName="searchBox" type="text" class="form-control" placeholder="Your question">
           <div class="input-group-append">
             <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="performSearch()">Search</span>
-            <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="addQuestion()">Add Question</span>
+            <span style="cursor: pointer" class="input-group-text" id="basic-addon2" (click)="addQuestion()">Ask Question</span>
           </div>
         </div>
         <hr />
@@ -18,7 +18,7 @@
         <a href="#">
           <strong>{{feed.communityId}}</strong>
         </a>
-        <a href="#" routerLink="/feed/{{feed.id}}">
+        <a href="#" routerLink="/post/{{feed.postId}}">
           <h3>{{feed.subject}}</h3>
         </a>
         <p>{{feed.comments}}</p>

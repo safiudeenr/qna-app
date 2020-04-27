@@ -46,10 +46,10 @@ export class QuestionComponent implements OnInit {
     }
 
     this.askService.submitAnswer(this.f.answerBox.value, postId, this.authService.currentUserValue.userId)
-    .subscribe(data => console.log(JSON.stringify(data)));
-    // console.log(postId);
-    // console.log(this.f.answerBox.value);
-    // console.log(JSON.stringify(this.authService.currentUserValue));
+    .subscribe(data => {
+      window.alert("answer added");
+    });
+   
   }
 
 }

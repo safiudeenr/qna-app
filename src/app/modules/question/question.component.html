@@ -7,7 +7,7 @@
             <div class="input-group" [formGroup]="questionForm">               
                 <textarea formControlName="answerBox" class="form-control" aria-label="With textarea"></textarea>
                 <div class="input-group-prepend">
-                    <span class="input-group-text" (click)="addAnswer(feed.postId)">Answer</span>
+                    <span class="input-group-text" (click)="addAnswer(feed.postId)" style="cursor: pointer">Answer</span>
                   </div>
               </div>
         </div>

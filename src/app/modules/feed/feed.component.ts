@@ -108,7 +108,11 @@ export class FeedComponent implements OnInit {
     this.askService.submitQuestion(this.f.searchBox.value, 
       this.f.searchBox.value,<number> this.authService.currentUserValue.userId, 1)
       .subscribe(data => {
-        console.log(JSON.stringify(data));
+        // console.log(JSON.stringify(data));
+        window.alert("Question Added");
+        this.searchForm = this.formBuilder.group({
+          searchBox: ['']
+        });
       });
 
   }
